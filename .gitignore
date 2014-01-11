@@ -1,5 +1,6 @@
 *.class
 bin/*
+gen/*
 
 # For .idea
 *.name
