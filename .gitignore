@@ -1,0 +1,11 @@
+*.class
+bin/*
+
+# For .idea
+*.name
+.idea/*
+
+# Package Files #
+*.war
+*.ear
+*.jar
