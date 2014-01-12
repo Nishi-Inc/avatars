@@ -1,17 +1,13 @@
 package inc.nishi.gravatar.models;
 
+import lombok.Data;
+
 /**
- * Created by alok on 1/11/14.
+ * @author Nishi Inc
+ * @since v0.1.0
  */
+@Data
 public class Info {
     private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
 }

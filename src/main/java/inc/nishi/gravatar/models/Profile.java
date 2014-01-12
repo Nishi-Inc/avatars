@@ -1,11 +1,12 @@
 package inc.nishi.gravatar.models;
 
 import android.media.Image;
+import lombok.Data;
 
 /**
  * @author Nishi Inc
- * @since v0.0.1
- */
+ * @since v0.1.0
+ */@Data
 public class Profile {
     private Image image;
     private Info info;
@@ -23,19 +24,4 @@ public class Profile {
         this.setInfo(info);
     }
 
-    public Info getInfo() {
-        return info;
-    }
-
-    public void setInfo(Info info) {
-        this.info = info;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
-    }
 }

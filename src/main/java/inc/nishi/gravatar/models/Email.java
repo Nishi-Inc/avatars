@@ -1,10 +1,13 @@
 package inc.nishi.gravatar.models;
 
 import inc.nishi.gravatar.utils.GravatarUtils;
+import lombok.Data;
 
 /**
- * Created by alok on 1/11/14.
+ * @author Nishi Inc
+ * @since v0.1.0
  */
+@Data
 public class Email {
 
     private String username;
@@ -21,19 +24,4 @@ public class Email {
         }
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getDomain() {
-        return domain;
-    }
-
-    public void setDomain(String domain) {
-        this.domain = domain;
-    }
 }
