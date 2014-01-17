@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="inc.nishi.gravatar"
+          package="inc.nishi.avatars"
           android:versionCode="1"
           android:versionName="1.0">
 
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="inc.nishi.gravatar.services.CommunicationService"
+        <service android:name=".services.CommunicationService"
                  android:label="communicationService"/>
 
     </application>

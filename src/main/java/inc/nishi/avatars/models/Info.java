@@ -1,4 +1,4 @@
-package inc.nishi.gravatar.models;
+package inc.nishi.avatars.models;
 
 import lombok.Data;
 

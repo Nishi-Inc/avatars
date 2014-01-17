@@ -1,11 +1,11 @@
-package inc.nishi.gravatar.services;
+package inc.nishi.avatars.services;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import inc.nishi.avatars.models.Email;
+import inc.nishi.avatars.models.Profile;
 import inc.nishi.gravatar.adapters.GravatarAdapter;
-import inc.nishi.gravatar.models.Email;
-import inc.nishi.gravatar.models.Profile;
 import inc.nishi.gravatar.utils.GravatarUtils;
 
 /**

@@ -1,6 +1,6 @@
-package inc.nishi.gravatar.utils;
+package inc.nishi.avatars.utils;
 
-import inc.nishi.gravatar.models.Email;
+import inc.nishi.avatars.models.Email;
 import org.apache.commons.lang3.StringUtils;
 
 import java.security.MessageDigest;
@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * @author Nishi Inc
  * @since v0.0.1
  */
-public abstract class GravatarUtils {
+public abstract class AvatarsUtils {
 
     public static final String AT   = "@";
     public static final String MD5  = "MD5";
@@ -29,7 +29,7 @@ public abstract class GravatarUtils {
     }
 
     public static String hash(Email email) {
-        return GravatarUtils.hash(email.toString());
+        return AvatarsUtils.hash(email.toString());
     }
 
     /**
@@ -40,7 +40,7 @@ public abstract class GravatarUtils {
     public static String hash(String string) {
         if(StringUtils.isNotBlank(string)) {
             try {
-                MessageDigest messageDigest = MessageDigest.getInstance(GravatarUtils.MD5);
+                MessageDigest messageDigest = MessageDigest.getInstance(AvatarsUtils.MD5);
                 messageDigest.update(string.getBytes());
                 byte byteData[] = messageDigest.digest();
 

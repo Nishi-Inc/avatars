@@ -1,7 +1,7 @@
-package inc.nishi.gravatar.adapters;
+package inc.nishi.avatars.adapters;
 
-import inc.nishi.gravatar.models.Email;
-import inc.nishi.gravatar.models.Profile;
+import inc.nishi.avatars.models.Email;
+import inc.nishi.avatars.models.Profile;
 
 import java.io.BufferedReader;
 import java.io.IOException;

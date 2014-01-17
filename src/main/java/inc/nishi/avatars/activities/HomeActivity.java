@@ -1,8 +1,8 @@
-package inc.nishi.gravatar.activities;
+package inc.nishi.avatars.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
-import inc.nishi.gravator.R;
+import inc.nishi.avatars.R;
 
 /**
  * @author Nishi Inc
