@@ -19,6 +19,11 @@ public class CommunicationService extends Service {
         return null;
     }
 
+    /**
+     *
+     * @param email
+     * @return profile for a given email address
+     */
     public Profile getProfile(String email) {
         if(GravatarUtils.isValidEmail(email)) {
             return this.getGravatarAdapter().getProfile(new Email(email));

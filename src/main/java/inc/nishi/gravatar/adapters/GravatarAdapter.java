@@ -47,7 +47,7 @@ public class GravatarAdapter {
             String line;
 
             while ((line = reader.readLine()) != null) {
-                response.append(line + GravatarAdapter.NEW_LINE_CHARACTER);
+                response.append(line).append(GravatarAdapter.NEW_LINE_CHARACTER);
             }
 
             inputStreamReader.close();;
@@ -57,7 +57,7 @@ public class GravatarAdapter {
             throw new RuntimeException(ex);
         }
 
-        if(response != null) {
+        if(response.length() > 0) {
             return GravatarAdapter.getProfileFromResponse(response.toString());
         } else {
             // TODO check if http status was 200 else throw exception
@@ -72,6 +72,7 @@ public class GravatarAdapter {
      * @return
      */
     private static Profile getProfileFromResponse(String response) {
+        // TODO inspect response once
         return null;
     }
 
