@@ -16,6 +16,7 @@ before_install:
     - android update sdk --filter platform-tools,android-19,extra-android-support,$ANDROID_SDKS --no-ui --force
 
     # Create and start emulator
+    - android list targets
     - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
     - emulator -avd test -no-skin -no-audio -no-window &
 

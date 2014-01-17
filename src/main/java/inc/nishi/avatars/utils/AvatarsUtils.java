@@ -17,6 +17,11 @@ public abstract class AvatarsUtils {
     public static final String AT   = "@";
     public static final String MD5  = "MD5";
 
+    public static final String GET_REQUEST      = "GET";
+    public static final String POST_REQUEST     = "POST";
+    public static final String PUT_REQUEST      = "PUT";
+    public static final String DELETE_REQUEST   = "DELETE";
+
     /**
      *
      * @return 'true' if seemingly valid e-mail address otherwise 'false'

@@ -2,6 +2,7 @@ package inc.nishi.avatars.adapters;
 
 import inc.nishi.avatars.models.Email;
 import inc.nishi.avatars.models.Profile;
+import inc.nishi.avatars.utils.AvatarsUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,11 +12,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by alok on 1/11/14
+ * @author Nishi Inc
+ * @since v0.1.0
  */
-public class GravatarAdapter {
+public class GravatarAdapter implements AvatarWebAdapter {
 
-    private static final String REQUEST_METHOD_TYPE = "GET";
     private static GravatarAdapter instance;
     private static String NEW_LINE_CHARACTER = "\n";
 
@@ -29,15 +30,14 @@ public class GravatarAdapter {
 
     /**
      * Calls Gravatar API
-     * @param email to get profile of
-     * @return Profile associated with the given email
      */
+    @Override
     public Profile getProfile(Email email) {
         URL url = GravatarAdapter.getUrlForEmail(email);
         StringBuilder response = new StringBuilder();
         try {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod(GravatarAdapter.REQUEST_METHOD_TYPE);
+            connection.setRequestMethod(AvatarsUtils.GET_REQUEST);
             OutputStreamWriter request = new OutputStreamWriter(connection.getOutputStream());
             request.flush();
             request.close();
@@ -68,8 +68,8 @@ public class GravatarAdapter {
 
     /**
      *
-     * @param response
-     * @return
+     * @param response response from gravatar
+     * @return Profile
      */
     private static Profile getProfileFromResponse(String response) {
         // TODO inspect response once
@@ -78,8 +78,8 @@ public class GravatarAdapter {
 
     /**
      *
-     * @param email
-     * @return
+     * @param email email
+     * @return URL
      */
     private static URL getUrlForEmail(Email email) {
         return null;

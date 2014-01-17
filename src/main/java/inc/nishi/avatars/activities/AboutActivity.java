@@ -5,15 +5,14 @@ import inc.nishi.avatars.R;
 
 /**
  * @author Nishi Inc
- * @since v0.0.1
+ * @since v0.1.0
  */
-public class HomeActivity extends AvatarsActivitySupport {
+public class AboutActivity extends AvatarsActivitySupport {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.main);
+        this.setContentView(R.layout.about);
     }
-
 
 }
