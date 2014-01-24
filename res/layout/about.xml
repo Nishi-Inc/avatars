@@ -4,6 +4,50 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <Space android:layout_width="@android:dimen/app_icon_size " android:layout_height="@android:"/>
 
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="1573dp"
+        android:layout_weight="1.17"
+        android:layout_marginTop="-1589dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/app_name"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/created_msg"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&#169; 2014-15 Nishi Inc. All rights reserved."
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal"
+        android:autoText="false"
+        android:textAppearance="@style/TabTextavatarsTheme"
+        />
+
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="1657dp"
+        android:layout_weight="1.17"
+        android:layout_marginTop="-1844dp"
+        android:id="@+id/space"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Code available under Apache v2.0 License"
+        android:id="@+id/license"
+        android:layout_gravity="center_horizontal"/>
 </LinearLayout>

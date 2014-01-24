@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">Avatars</string>
     <string name="email_label">E mail:</string>
+    <string name="company_name">Nishi Inc</string>
+    <string name="created_msg">Created with passion by </string>
 </resources>

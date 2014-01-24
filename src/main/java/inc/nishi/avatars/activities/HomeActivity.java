@@ -12,7 +12,7 @@ public class HomeActivity extends AvatarsActivitySupport {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.main);
+        this.setContentView(R.layout.avatars);
     }
 
 

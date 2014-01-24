@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="avatarsTheme" parent="@style/_avatarsTheme"/>
+
+  <style name="_avatarsTheme" parent="android:Theme.Holo.Light">
+
+    <item name="android:editTextBackground">@drawable/avatarstheme_edit_text_holo_light</item>
+
+    <item name="android:textColorHighlight">#9933bee5</item>
+    <item name="android:textSelectHandleLeft">@drawable/avatarstheme_text_select_handle_left</item>
+    <item name="android:textSelectHandleRight">@drawable/avatarstheme_text_select_handle_right</item>
+    <item name="android:textSelectHandle">@drawable/avatarstheme_text_select_handle_middle</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewavatarsTheme</item>
+
+    <item name="android:listChoiceIndicatorMultiple">@drawable/avatarstheme_btn_check_holo_light</item>
+
+    <item name="android:listChoiceIndicatorSingle">@drawable/avatarstheme_btn_radio_holo_light</item>
+
+    <item name="android:buttonStyle">@style/ButtonavatarsTheme</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonavatarsTheme</item>
+
+    <item name="android:dropDownSpinnerStyle">@style/SpinneravatarsTheme</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBaravatarsTheme</item>
+
+    <item name="android:seekBarStyle">@style/SeekBaravatarsTheme</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBaravatarsTheme</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigavatarsTheme</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallavatarsTheme</item>
+
+    <item name="android:buttonStyleToggle">@style/ToggleavatarsTheme</item>
+
+    <item name="android:listChoiceBackgroundIndicator">@drawable/avatarstheme_list_selector_holo_light</item>
+
+    <item name="android:activatedBackgroundIndicator">@drawable/avatarstheme_activated_background_holo_light</item>
+
+    <item name="android:fastScrollThumbDrawable">@drawable/avatarstheme_fastscroll_thumb_holo</item>
+
+  </style>
+
+</resources>
