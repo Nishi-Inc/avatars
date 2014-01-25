@@ -5,6 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -64,4 +66,19 @@ public abstract class AvatarsUtils {
         return null;
     }
 
+    /**
+     *
+     * @param emails as array of string
+     * @return an array of valid email Ids
+     */
+    public static Email[] getValidEmailIds(String... emails) {
+        List<Email> emailList = new ArrayList<Email>();
+        for(String email : emails) {
+            if(AvatarsUtils.isValidEmail(email)) {
+                emailList.add(new Email(email));
+            }
+        }
+
+        return (Email[]) emailList.toArray();
+    }
 }

@@ -1,53 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
+              android:layout_gravity="center_horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <Space
-        android:layout_width="fill_parent"
-        android:layout_height="1573dp"
-        android:layout_weight="1.17"
-        android:layout_marginTop="-1589dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo_about"
+        android:contentDescription="@string/logo_description"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:adjustViewBounds="false"
+        android:src="@drawable/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:saveEnabled="false"
+        android:minHeight="40dp"
+        android:minWidth="40dp"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@id/logo_about"
         android:text="@string/app_name"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"/>
+        android:id="@+id/app_name_about"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_below="@id/app_name_about"
         android:text="@string/created_msg"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal"/>
+        android:id="@+id/created_msg"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="&#169; 2014-15 Nishi Inc. All rights reserved."
-        android:id="@+id/textView3"
-        android:layout_gravity="center_horizontal"
+        android:id="@+id/copyright_msg_about"
+        android:layout_below="@id/created_msg"
+        android:layout_centerHorizontal="true"
         android:autoText="false"
         android:textAppearance="@style/TabTextavatarsTheme"
         />
 
-    <Space
-        android:layout_width="fill_parent"
-        android:layout_height="1657dp"
-        android:layout_weight="1.17"
-        android:layout_marginTop="-1844dp"
-        android:id="@+id/space"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textIsSelectable="true"
         android:text="Code available under Apache v2.0 License"
         android:id="@+id/license"
-        android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@android:dimen/app_icon_size"
+        android:layout_below="@id/copyright_msg_about" />
+
+
+</RelativeLayout>

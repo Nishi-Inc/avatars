@@ -3,6 +3,8 @@ package inc.nishi.avatars.adapters;
 import inc.nishi.avatars.models.Email;
 import inc.nishi.avatars.models.Profile;
 
+import java.util.List;
+
 /**
  * @author Nishi Inc
  * @since v0.1.0
@@ -10,9 +12,9 @@ import inc.nishi.avatars.models.Profile;
 public interface AvatarWebAdapter {
 
     /**
-     * @param email to get profile of
+     * @param emails to get profile of
      * @return Profile associated with the given email
      */
-    public Profile getProfile(Email email);
+    public List<Profile> getProfile(Email... emails);
 
 }

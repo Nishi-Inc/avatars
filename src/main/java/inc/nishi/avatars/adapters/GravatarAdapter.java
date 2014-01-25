@@ -10,6 +10,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Nishi Inc
@@ -32,37 +34,42 @@ public class GravatarAdapter implements AvatarWebAdapter {
      * Calls Gravatar API
      */
     @Override
-    public Profile getProfile(Email email) {
-        URL url = GravatarAdapter.getUrlForEmail(email);
-        StringBuilder response = new StringBuilder();
-        try {
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod(AvatarsUtils.GET_REQUEST);
-            OutputStreamWriter request = new OutputStreamWriter(connection.getOutputStream());
-            request.flush();
-            request.close();
+    public List<Profile> getProfile(Email... emails) {
+        List<Profile> profiles = new ArrayList<Profile>();
+        for(Email email : emails) {
+            URL url = GravatarAdapter.getUrlForEmail(email);
+            StringBuilder response = new StringBuilder();
+            try {
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod(AvatarsUtils.GET_REQUEST);
+                OutputStreamWriter request = new OutputStreamWriter(connection.getOutputStream());
+                request.flush();
+                request.close();
 
-            InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
-            BufferedReader reader = new BufferedReader(inputStreamReader);
-            String line;
+                InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
+                BufferedReader reader = new BufferedReader(inputStreamReader);
+                String line;
 
-            while ((line = reader.readLine()) != null) {
-                response.append(line).append(GravatarAdapter.NEW_LINE_CHARACTER);
+                while ((line = reader.readLine()) != null) {
+                    response.append(line).append(GravatarAdapter.NEW_LINE_CHARACTER);
+                }
+
+                inputStreamReader.close();
+                reader.close();
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
             }
 
-            inputStreamReader.close();;
-            reader.close();
-
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
+            if(response.length() > 0) {
+                profiles.add(GravatarAdapter.getProfileFromResponse(response.toString()));
+            } else {
+                // TODO check if http status was 200 else throw exception
+                return null;
+            }
         }
 
-        if(response.length() > 0) {
-            return GravatarAdapter.getProfileFromResponse(response.toString());
-        } else {
-            // TODO check if http status was 200 else throw exception
-            return null;
-        }
+        return profiles;
 
     }
 

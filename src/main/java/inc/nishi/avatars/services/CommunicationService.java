@@ -3,10 +3,13 @@ package inc.nishi.avatars.services;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import inc.nishi.avatars.R;
 import inc.nishi.avatars.adapters.GravatarAdapter;
-import inc.nishi.avatars.models.Email;
+import inc.nishi.avatars.adapters.ParseAdapter;
 import inc.nishi.avatars.models.Profile;
 import inc.nishi.avatars.utils.AvatarsUtils;
+
+import java.util.List;
 
 /**
  * @author Nishi Inc
@@ -22,19 +25,19 @@ public class CommunicationService extends Service {
 
     /**
      *
-     * @param email email
-     * @return profile for a given email address
+     * @param emails emails
+     * @return profile for given email addresses
      */
-    public Profile getProfile(String email) {
-        if(AvatarsUtils.isValidEmail(email)) {
-            return this.getGravatarAdapter().getProfile(new Email(email));
-        } else {
-            return new Profile(null, null);
-        }
+    public List<Profile> getProfiles(String... emails) {
+        return this.getParseAdapter().getProfile(AvatarsUtils.getValidEmailIds(emails));
     }
 
     private GravatarAdapter getGravatarAdapter() {
         return GravatarAdapter.getInstance();
+    }
+
+    private ParseAdapter getParseAdapter() {
+        return ParseAdapter.getInstance(this.getApplicationContext(), this.getString(R.string.parse_application_id), this.getString(R.string.parse_rest_api_key));
     }
 
 }

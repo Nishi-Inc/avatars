@@ -4,4 +4,6 @@
     <string name="email_label">E mail:</string>
     <string name="company_name">Nishi Inc</string>
     <string name="created_msg">Created with passion by </string>
+    <string name="licenseUrl">http://www.apache.org/licenses/LICENSE-2.0.html</string>
+    <string name="logo_description">Avatars: Your public face</string>
 </resources>
